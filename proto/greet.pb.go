@@ -103,7 +103,7 @@ func (x *HelloResponse) GetMessage() string {
 
 type HelloRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Message       string                 `protobuf:"bytes,1,opt,name=message,proto3" json:"message,omitempty"`
+	Name          string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -138,9 +138,9 @@ func (*HelloRequest) Descriptor() ([]byte, []int) {
 	return file_proto_greet_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *HelloRequest) GetMessage() string {
+func (x *HelloRequest) GetName() string {
 	if x != nil {
-		return x.Message
+		return x.Name
 	}
 	return ""
 }
@@ -240,17 +240,17 @@ const file_proto_greet_proto_rawDesc = "" +
 	"\x11proto/greet.proto\x12\rgreet_service\"\t\n" +
 	"\aNoPrams\")\n" +
 	"\rHelloResponse\x12\x18\n" +
-	"\amessage\x18\x01 \x01(\tR\amessage\"(\n" +
-	"\fHelloRequest\x12\x18\n" +
-	"\amessage\x18\x01 \x01(\tR\amessage\" \n" +
+	"\amessage\x18\x01 \x01(\tR\amessage\"\"\n" +
+	"\fHelloRequest\x12\x12\n" +
+	"\x04name\x18\x01 \x01(\tR\x04name\" \n" +
 	"\bNameList\x12\x14\n" +
 	"\x05names\x18\x01 \x03(\tR\x05names\")\n" +
 	"\vMessageList\x12\x1a\n" +
-	"\bmessages\x18\x01 \x03(\tR\bmessages2\xd2\x02\n" +
+	"\bmessages\x18\x01 \x03(\tR\bmessages2\xd1\x02\n" +
 	"\fGreetService\x12@\n" +
 	"\bSayHello\x12\x16.greet_service.NoPrams\x1a\x1c.greet_service.HelloResponse\x12M\n" +
-	"\x12SayHelloFromServer\x12\x17.greet_service.NameList\x1a\x1c.greet_service.HelloResponse0\x01\x12P\n" +
-	"\x12SayHelloFromClient\x12\x1c.greet_service.HelloResponse\x1a\x1a.greet_service.MessageList(\x01\x12_\n" +
+	"\x12SayHelloFromServer\x12\x17.greet_service.NameList\x1a\x1c.greet_service.HelloResponse0\x01\x12O\n" +
+	"\x12SayHelloFromClient\x12\x1b.greet_service.HelloRequest\x1a\x1a.greet_service.MessageList(\x01\x12_\n" +
 	"\x1eSayHelloBidirectionalStreaming\x12\x1b.greet_service.HelloRequest\x1a\x1c.greet_service.HelloResponse(\x010\x01B\tZ\a./protob\x06proto3"
 
 var (
@@ -276,7 +276,7 @@ var file_proto_greet_proto_goTypes = []any{
 var file_proto_greet_proto_depIdxs = []int32{
 	0, // 0: greet_service.GreetService.SayHello:input_type -> greet_service.NoPrams
 	3, // 1: greet_service.GreetService.SayHelloFromServer:input_type -> greet_service.NameList
-	1, // 2: greet_service.GreetService.SayHelloFromClient:input_type -> greet_service.HelloResponse
+	2, // 2: greet_service.GreetService.SayHelloFromClient:input_type -> greet_service.HelloRequest
 	2, // 3: greet_service.GreetService.SayHelloBidirectionalStreaming:input_type -> greet_service.HelloRequest
 	1, // 4: greet_service.GreetService.SayHello:output_type -> greet_service.HelloResponse
 	1, // 5: greet_service.GreetService.SayHelloFromServer:output_type -> greet_service.HelloResponse
